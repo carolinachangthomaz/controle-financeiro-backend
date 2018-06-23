@@ -6,4 +6,7 @@ module.exports = function(server){
 
    const cicloDePagamentoService = require('../api/ciclodePagamento/cicloDePagamentoService')
    cicloDePagamentoService.register(rotas, '/ciclodepagamento')
+
+   const cicloDeSumarioService = require('../api/sumarioDePagamento/sumarioDePagamentoService')
+   rotas.route('/sumarioDePagamento').get(cicloDeSumarioService.getSumario)
 }
